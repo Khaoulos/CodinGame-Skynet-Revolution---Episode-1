@@ -13,7 +13,10 @@ class Player {
         int N = in.nextInt(); // the total number of nodes in the level, including the gateways
         int L = in.nextInt(); // the number of links
         int E = in.nextInt(); // the number of exit gateways
+        
         List<Integer> gateWaysNode = new ArrayList<Integer>();
+        
+       //une liste qui contient tous les neouds qui ont un link commun avec les gateway Node
         List<Integer> ExitGateWaysNode = new ArrayList<Integer>();
         
         
@@ -45,6 +48,10 @@ class Player {
       
             int noeud=0;
             boolean trouve=false;
+            
+            //pour chaque position de Skynet je parcours la liste ExitGateWaysNode pour regarder s'il est lié directement à la gateway 
+			//si ce le cas, on "server" le lien entre le Skynet et la gateway en priorité
+
             for(int i=0;i<ExitGateWaysNode.size(); i++){
              
                 if(ExitGateWaysNode.get(i) != SI && !trouve){
